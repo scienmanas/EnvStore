@@ -15,14 +15,14 @@ export function Navbar() {
 
   return (
     <Fragment>
-      <motion.nav
-        initial={{ opacity: 1, filter: "blur(8px)" }}
-        whileInView={{ opacity: 1, filter: "blur(0px)" }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="navbar max-w-screen-xl fixed top-0 z-20 w-full h-fit p-4 lg:py-4 xl:px-0 duration-200"
-      >
-        <div className="content-wrapper w-full h-fit py-4 px-6 backdrop-blur-sm bg-white/60 rounded-4xl flex flex-row items-center justify-between">
+      <nav className="navbar max-w-screen-xl fixed top-0 z-20 w-full h-fit p-4 lg:py-4 xl:px-0 duration-200">
+        <motion.div
+          initial={{ opacity: 0, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="content-wrapper z-20 w-full h-fit py-4 px-6 rounded-4xl flex flex-row items-center justify-between backdrop-blur-sm bg-white/60"
+        >
           <div className="logo w-fit h-fi flex flex-row items-center justify-center">
             <Link
               href={"/"}
@@ -85,8 +85,8 @@ export function Navbar() {
               ></div>
             </button>
           </div>
-        </div>
-      </motion.nav>
+        </motion.div>
+      </nav>
       <motion.div
         initial={{
           scale: 0,

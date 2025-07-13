@@ -7,15 +7,21 @@ interface navigationLinksType {
   link: string;
 }
 
-interface donationType {
+interface DonationType {
   name: string;
   icon: IconType;
   address: string;
 }
 
-interface FAQItem {
+interface FAQItemType {
   question: string;
   answer: string;
+}
+
+interface CardDataType {
+  num: number;
+  name: string;
+  description: string;
 }
 
 export const navigationLinks: navigationLinksType[] = [
@@ -41,7 +47,7 @@ export const navigationLinks: navigationLinksType[] = [
   },
 ];
 
-export const donationLinks: donationType[] = [
+export const donationLinks: DonationType[] = [
   {
     name: "Buy me a coffee",
     icon: SiBuymeacoffee,
@@ -67,7 +73,7 @@ export const donationLinks: donationType[] = [
   },
 ];
 
-export const faqData: FAQItem[] = [
+export const faqData: FAQItemType[] = [
   {
     question: "Are there any terms for use?",
     answer:
@@ -116,5 +122,37 @@ export const navBarLinks: navigationLinksType[] = [
   {
     name: "Author",
     link: "https://github.com/scienmanas",
+  },
+];
+
+export const cardData: CardDataType[] = [
+  {
+    num: 1,
+    name: "Open Source",
+    description:
+      "The code used is completely open source ensuring credibiblity.",
+  },
+  {
+    num: 2,
+    name: "Self Hostable",
+    description: "Still have fear, deploy your own is easy steps and enjoy :)",
+  },
+  {
+    num: 3,
+    name: "Secure",
+    description:
+      "All the data is encrypted using  your info and a passowrd.",
+  },
+  {
+    num: 4,
+    name: "Rich features",
+    description:
+      "Get Analytics how many times and when was your data last accessed.",
+  },
+  {
+    num: 5,
+    name: "CLI Support",
+    description:
+      "Just download the .env to the location you need, with a single line of command.",
   },
 ];
