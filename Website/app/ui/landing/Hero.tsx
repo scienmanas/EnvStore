@@ -57,12 +57,12 @@ export function Hero() {
         >
           <input
             type="text"
-            className="outline-none w-fit max-w-[250px] h-fit"
+            className="outline-none w-[170px] sm:w-fit sm:max-w-[250px] h-fit"
             placeholder="Write Something :)"
           />
           <Link
             href={"/dashboard"}
-            className="bg-neutral-900 text-neutral-100 px-3 py-2 rounded-3xl"
+            className="bg-neutral-900 text-neutral-100 px-3 py-2 rounded-3xl text-nowrap"
           >
             Get started
           </Link>

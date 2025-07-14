@@ -3,10 +3,10 @@ import metaDataImg from "@/public/assets/metadata/metadata.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.BASE_URL as string),
-  title: `Signin - ${process.env.SITE_NAME}`,
+  title: `${process.env.SITE_NAME} | Dashboard`,
   description:
-    "Sign in to EnvStore an Open Source solution to to manage the env files for your projects. Stored encrypted, and decrypted when required.",
-  keywords: ["signin", "login", "EnvStore", "open source tool"],
+    "EnvStore an Open Source solution to to manage the env files for your projects. Stored encrypted, and decrypted when required.",
+  keywords: ["EnvStore", "open source tool"],
   authors: [
     {
       name: "Manas",
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   ],
   robots: "index, follow",
   openGraph: {
-    title: `Signin - ${process.env.SITE_NAME}`,
+    title: `${process.env.SITE_NAME} | Dashboard`,
     description:
-      "Sign in to EnvStore an Open Source solution to to manage the env files for your projects. Stored encrypted, and decrypted when required.",
+      "EnvStore an Open Source solution to to manage the env files for your projects. Stored encrypted, and decrypted when required.",
     url: process.env.BASE_URL,
     type: "article",
     siteName: `${process.env.SITE_NAME}`,
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: `Signin - ${process.env.SITE_NAME}`,
+    title: `${process.env.SITE_NAME} | Dashboard`,
     description:
-      "Sign in to EnvStore an Open Source solution to to manage the env files for your projects. Stored encrypted, and decrypted when required.",
+      "EnvStore an Open Source solution to to manage the env files for your projects. Stored encrypted, and decrypted when required.",
     creator: "@scienmanas",
     site: process.env.SITE_ENV,
     images: metaDataImg.src,
@@ -41,5 +41,5 @@ export default function Dashboard({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="w-full h-fit">{children}</div>;
+  return <section className="w-full h-fit">{children}</section>;
 }

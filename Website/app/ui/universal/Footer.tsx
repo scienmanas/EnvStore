@@ -96,7 +96,7 @@ export function Footer() {
         </div>
         {/* Divider */}
         <div className="w-full h-px bg-gray-400/50 "></div>
-        <div className="lower-part w-full h-fit flex flex-row items-center justify-between">
+        <div className="lower-part w-full h-fit flex flex-row items-center justify-between gap-6 flex-wrap">
           <div className="copyright text-neutral-300 text-sm sm:text-base">
             © 2025 All rights reserved.
           </div>
