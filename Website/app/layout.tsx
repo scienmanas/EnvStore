@@ -56,7 +56,7 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
         <GradientBackground />
-        <GoogleAnalytics gaId={process.env.GOOGLE_CLIENT_ID ?? ""} />
+        <GoogleAnalytics gaId={process.env.G_ANALYTICS_ID ?? ""} />
         {/* But me a coffee tag */}
         <script
           data-name="BMC-Widget"
