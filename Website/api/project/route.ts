@@ -5,8 +5,29 @@ import { db } from "@/db/index";
 import { user } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { JWTPayloadType } from "@/app/lib/definitions";
+import { z } from "zod";
 
-export async function GET(req: NextRequest) {}
+// This function will act as getting individual as well as details of all the entries - encrypted descrypted in form of URL
+export async function GET(req: NextRequest) {
+  const { userId, status, message } = await authMiddleware();
+  if (status === "fail")
+    return NextResponse.json({ message: message }, { status: 401 });
+  // Check if userId is available
+  if (!userId)
+    return NextResponse.json({ message: "User ID not found" }, { status: 400 });
+
+  // Get the search params from the request URL
+  const { searchParams } = new URL(req.url);
+  // Example: get 'apikey' and 'pass' from query params
+  const query = searchParams.get("q");
+
+  return NextResponse.json(
+    {
+      message: "Received query params",
+    },
+    { status: 200 }
+  );
+}
 
 export async function POST(req: NextRequest) {}
 

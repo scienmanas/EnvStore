@@ -67,7 +67,7 @@ export default function Auth() {
     };
 
     checkAuth();
-  }, [mounted, setMounted]);
+  }, [mounted, setMounted, router]);
 
   if (!mounted) return <AuthPageLoader />;
   else

@@ -21,7 +21,7 @@ export const user = pgTable("user", {
   created_at: timestamp("created_at").defaultNow().notNull(),
 });
 
-export const envData = pgTable("env_data", {
+export const project = pgTable("project", {
   id: uuid("id")
     .primaryKey()
     .default(sql`gen_random_uuid()`),
@@ -30,10 +30,29 @@ export const envData = pgTable("env_data", {
     .notNull(),
   name: varchar("name", { length: 255 }).notNull(),
   description: text("description").notNull(),
+  project_secret: varchar("project_secret", { length: 255 }).notNull(),
+  hits: integer("hits").default(0).notNull(),
+  created_at: timestamp("created_at").defaultNow().notNull(),
+  updated_at: timestamp("updated_at").defaultNow().notNull(),
+  last_accessed_at: timestamp("last_accessed_at").default(sql`null`),
+});
+
+export const envData = pgTable("env_data", {
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
+  user_id: uuid("user_id")
+    .references(() => user.id)
+    .notNull(),
+  project_id: uuid("project_id")
+    .references(() => project.id)
+    .notNull(),
+  name: varchar("name", { length: 255 }).notNull(),
+  description: text("description").notNull(),
   env_data: text("env_data").notNull(),
   project_secret: varchar("project_secret", { length: 512 }).notNull(),
   hits: integer("hits").default(0).notNull(),
   created_at: timestamp("created_at").defaultNow().notNull(),
   updated_at: timestamp("updated_at").defaultNow().notNull(),
-  last_accessed_at: timestamp("last_accessed_at"),
+  last_accessed_at: timestamp("last_accessed_at").default(sql`null`),
 });
